@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4a517, #8b6914);
+  border-radius: 4px;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 165, 23, 0.3);
+}
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(135deg, #d4a517, #f4d03f, #d4a517, #8b6914, #d4a517);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Gold gradient background */
+.gold-bg {
+  background: linear-gradient(135deg, #d4a517, #f4d03f, #d4a517);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease infinite;
+}
+
+/* Spotlight effect */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 165, 23, 0.15) 0%, transparent 60%);
+  animation: spotlight 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes spotlight {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(25%, 25%); }
+  50% { transform: translate(0, 50%); }
+  75% { transform: translate(-25%, 25%); }
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #d4a517;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float-up 10s linear infinite;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: 0 0 20px rgba(212, 165, 23, 0.4);
+}
+
+.glow-strong {
+  box-shadow: 0 0 40px rgba(212, 165, 23, 0.5);
+}
+
+/* Border gold */
+.border-gold {
+  border-color: rgba(212, 165, 23, 0.5);
+}
+
+/* Section backgrounds */
+.section-dark {
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+}
