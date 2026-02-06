@@ -48,7 +48,7 @@ export default function Footer() {
           >© 2026 Jaguar Conservation. Todos los derechos reservados.</p>
           <p
             className="mt-2 md:mt-0 text-[#d4a517]"
-          >Made with the <span role="img">❤️</span> by Adrián</p>
+          >Made with the <span role="img">❤️</span> by <a href="https://adevadrian.netlify.app" target="_blank" rel="noopener noreferrer" className="text-[#b8860b] text-lg hover:underline hover:text-[#d4a517] transition-colors duration-300">Adrián</a></p>
           <div className="flex items-center mt-4 md:mt-0 space-x-6">
           </div>
         </div>

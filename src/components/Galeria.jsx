@@ -8,19 +8,19 @@ export default function Galeria() {
 
   const images = [
     {
-      src: "https://www.pexels.com/es-es/foto/leopardo-africano-majestuoso-en-su-habitat-natural-34582698/",
+      src: "https://www.pexels.com/es-es/foto/primer-plano-de-un-leopardo-del-amur-en-estado-salvaje-30395760/",
       title: "Majestuosidad",
       category: "Retrato",
       description: "La mirada penetrante del depredador perfecto"
     },
     {
-      src: "https://images.pexels.com/photos/70849/pexels-photo-70849.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://pixabay.com/es/illustrations/jaguar-animal-naturaleza-intenso-7485361/",
       title: "Reino Salvaje",
       category: "Vida Silvestre",
       description: "El jaguar en su entorno natural"
     },
     {
-      src: "https://www.pexels.com/es-es/foto/leopardo-africano-majestuoso-en-su-habitat-natural-34582698/",
+      src: "https://pixabay.com/es/illustrations/jaguar-animal-naturaleza-intenso-7485361/",
       title: "Garras de Oro",
       category: "Detalle",
       description: "Las garras retráctiles que definen al cazador supremo"
@@ -71,6 +71,10 @@ export default function Galeria() {
           >
             Galería del Jaguar
           </motion.h2>
+          
+          {/* Gold divider */}
+          <div className="h-px bg-gradient-to-r from-transparent via-[#d4a517] to-transparent mx-auto mt-6 w-48" />
+          
           <motion.p
             className="mt-6 max-w-2xl mx-auto text-gray-400"
             initial={{ opacity: 0 }}
