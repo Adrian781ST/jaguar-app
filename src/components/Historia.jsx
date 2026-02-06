@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import JaguarFaceAnimation from './JaguarFaceAnimation';
 
 export default function Historia() {
   const ref = useRef(null);
@@ -35,7 +36,7 @@ export default function Historia() {
   ];
 
   return (
-    <section id="historia" ref={ref} className="py-32 relative overflow-hidden">
+    <section id="historia" ref={ref} className="py-4 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 spotlight" />
       <div className="morphing-shape w-[600px] h-[600px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-10" />
@@ -45,8 +46,11 @@ export default function Historia() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center"
         >
+          {/* Jaguar Face Animation */}
+          <JaguarFaceAnimation />
+          
           <motion.span
             className="text-[#d4a517] text-sm tracking-widest uppercase"
             initial={{ opacity: 0 }}
@@ -55,20 +59,16 @@ export default function Historia() {
           >
             Un viaje en el tiempo
           </motion.span>
+          
           <motion.h2
-            className="text-5xl md:text-6xl font-bold mt-4"
-            style={{ 
-              background: 'linear-gradient(135deg, #d4a517, #f4d03f)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              color: 'transparent'
-            }}
+            className="text-5xl md:text-6xl font-bold mt-4 text-[#b8860b]"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4 }}
           >
             Historia del Jaguar
           </motion.h2>
+          
           <motion.p
             className="text-gray-400 mt-6 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
@@ -112,7 +112,7 @@ export default function Historia() {
               {/* Center Dot */}
               <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2">
                 <motion.div
-                  className="w-4 h-4 rounded-full gold-gradient border-2 border-black"
+                  className="w-4 h-4 rounded-full bg-[#d4a517] border-2 border-black"
                   whileHover={{ scale: 1.5 }}
                 />
               </div>

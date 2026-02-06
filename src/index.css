@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-padding-top: 80px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -36,27 +40,14 @@ body {
   border: 1px solid rgba(212, 165, 23, 0.3);
 }
 
-/* Gold gradient text */
+/* Gold solid text */
 .gold-text {
-  background: linear-gradient(135deg, #d4a517, #f4d03f, #d4a517, #8b6914, #d4a517);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer 3s ease infinite;
+  color: #d4a517;
 }
 
-@keyframes shimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Gold gradient background */
+/* Gold solid background */
 .gold-bg {
-  background: linear-gradient(135deg, #d4a517, #f4d03f, #d4a517);
-  background-size: 200% 200%;
-  animation: shimmer 3s ease infinite;
+  background-color: #d4a517;
 }
 
 /* Spotlight effect */

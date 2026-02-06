@@ -38,7 +38,7 @@ export default function Hero() {
       <motion.div
         style={{ 
           y: y1,
-          background: 'radial-gradient(circle, rgba(212, 165, 23, 0.6) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(184, 134, 11, 0.6) 0%, transparent 70%)',
           left: '50%',
           top: '10%',
           transform: 'translateX(-50%)'
@@ -60,18 +60,14 @@ export default function Hero() {
           <div className="relative inline-block">
             <motion.div
               className="absolute inset-0 rounded-full blur-3xl opacity-40"
-              style={{ background: 'linear-gradient(135deg, #d4a517, #f4d03f)' }}
+              style={{ background: 'linear-gradient(135deg, #d4a517, #ffd700)' }}
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
             <motion.h1
-              className="relative text-7xl md:text-8xl font-bold tracking-tight"
+              className="relative text-7xl md:text-8xl font-bold tracking-tight text-[#b8860b]"
               style={{ 
-                scale,
-                background: 'linear-gradient(135deg, #d4a517, #f4d03f 50%, #d4a517)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                color: 'transparent'
+                scale
               }}
             >
               JAGUAR
@@ -119,7 +115,7 @@ export default function Hero() {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#8b6914] via-[#d4a517] to-[#f4d03f]"
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#8b6914] via-[#d4a517] to-[#ffd700]"
       />
     </section>
   );

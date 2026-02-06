@@ -8,19 +8,19 @@ export default function Galeria() {
 
   const images = [
     {
-      src: "https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://www.pexels.com/es-es/foto/leopardo-africano-majestuoso-en-su-habitat-natural-34582698/",
       title: "Majestuosidad",
       category: "Retrato",
       description: "La mirada penetrante del depredador perfecto"
     },
     {
-      src: "https://images.pexels.com/photos/1805409/pexels-photo-1805409.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://images.pexels.com/photos/70849/pexels-photo-70849.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Reino Salvaje",
       category: "Vida Silvestre",
       description: "El jaguar en su entorno natural"
     },
     {
-      src: "https://images.pexels.com/photos/235986/pexels-photo-235986.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://www.pexels.com/es-es/foto/leopardo-africano-majestuoso-en-su-habitat-natural-34582698/",
       title: "Garras de Oro",
       category: "Detalle",
       description: "Las garras retráctiles que definen al cazador supremo"
@@ -32,7 +32,7 @@ export default function Galeria() {
       description: "El felino más grande de Norteamérica"
     },
     {
-      src: "https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://images.pexels.com/photos/13301383/pexels-photo-13301383.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Poder",
       category: "Acción",
       description: "La fuerza de un depredador legendario"
@@ -46,7 +46,7 @@ export default function Galeria() {
   ];
 
   return (
-    <section id="galeria" ref={containerRef} className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%)' }}>
+    <section id="galeria" ref={containerRef} className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%)' }}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -64,13 +64,7 @@ export default function Galeria() {
             Belleza natural
           </motion.span>
           <motion.h2
-            className="text-5xl md:text-6xl font-bold mt-4"
-            style={{ 
-              background: 'linear-gradient(135deg, #d4a517, #f4d03f)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              color: 'transparent'
-            }}
+            className="text-5xl md:text-6xl font-bold mt-4 text-[#b8860b]"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4 }}
@@ -83,7 +77,7 @@ export default function Galeria() {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
           >
-            Instantáneas que capturan la esencia del rey de la selva
+            Instantáneas que capturan la esencia del rey de la selva 
           </motion.p>
         </motion.div>
 
