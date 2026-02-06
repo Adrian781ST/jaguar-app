@@ -7,7 +7,7 @@ export default function Navbar() {
     { name: 'Historia', href: '#historia' },
     { name: 'Ejemplares', href: '#ejemplares' },
     { name: 'Galería', href: '#galeria' },
-    { name: 'Conservación', href: '#conservacion' }
+    { name: 'Contacto', href: '#footer' }
   ];
 
   return (

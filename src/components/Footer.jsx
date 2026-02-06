@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="py-16 relative overflow-hidden glass-effect">
+    <footer id="footer" className="py-16 relative overflow-hidden glass-effect">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
