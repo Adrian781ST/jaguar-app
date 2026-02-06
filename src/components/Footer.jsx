@@ -55,8 +55,8 @@ export default function Footer() {
 
         {/* Running Jaguar Animation */}
         <motion.div
-          className="absolute bottom-2 left-0 right-0 overflow-hidden"
-          style={{ height: '40px' }}
+          className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none"
+          style={{ height: '50px' }}
         >
           <motion.svg
             viewBox="0 0 200 50"
