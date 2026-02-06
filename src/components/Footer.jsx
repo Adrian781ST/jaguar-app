@@ -6,43 +6,71 @@ export default function Footer() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
-      {/* Running Jaguar Animation - Simple CSS animation */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none" style={{ height: '30px' }}>
-        <svg viewBox="0 0 100 20" className="w-full h-full" preserveAspectRatio="none">
+      {/* Running Jaguar Animation */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none" style={{ height: '50px' }}>
+        <svg viewBox="0 0 120 40" className="w-full h-full" preserveAspectRatio="none">
           <defs>
-            <linearGradient id="jagGold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="jagRunGold" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#d4a517" />
               <stop offset="100%" stopColor="#b8860b" />
             </linearGradient>
           </defs>
           
-          {/* Simple jaguar shape */}
+          {/* Jaguar silhouette - running profile */}
           <g>
-            <ellipse cx="20" cy="12" rx="12" ry="6" fill="url(#jagGold)" />
-            <ellipse cx="32" cy="10" rx="5" ry="4" fill="url(#jagGold)" />
-            <ellipse cx="8" cy="12" rx="4" ry="3" fill="url(#jagGold)" />
+            {/* Body */}
+            <ellipse cx="50" cy="22" rx="28" ry="12" fill="url(#jagRunGold)" />
+            
+            {/* Head - jaguar profile */}
+            <ellipse cx="85" cy="15" rx="12" ry="9" fill="url(#jagRunGold)" />
+            
+            {/* Snout */}
+            <ellipse cx="97" cy="17" rx="8" ry="5" fill="url(#jagRunGold)" />
+            
+            {/* Ear */}
+            <ellipse cx="80" cy="7" rx="4" ry="5" fill="url(#jagRunGold)" />
+            
+            {/* Eye */}
+            <circle cx="92" cy="13" r="1.5" fill="#0a0a0a" />
+            
+            {/* Spots on body */}
+            <circle cx="40" cy="20" r="3" fill="#8b6914" opacity="0.6" />
+            <circle cx="55" cy="25" r="2.5" fill="#8b6914" opacity="0.6" />
+            <circle cx="65" cy="21" r="3" fill="#8b6914" opacity="0.6" />
             
             {/* Animated legs */}
             <g>
-              <line x1="15" y1="18" x2="12" y2="22" stroke="url(#jagGold)" strokeWidth="2" strokeLinecap="round">
-                <animate attributeName="y2" values="22;20;22" dur="0.2s" repeatCount="indefinite" />
-              </line>
-              <line x1="22" y1="18" x2="25" y2="22" stroke="url(#jagGold)" strokeWidth="2" strokeLinecap="round">
-                <animate attributeName="y2" values="22;20;22" dur="0.2s" repeatCount="indefinite" begin="0.1s" />
-              </line>
+              {/* Front leg 1 */}
+              <path d="M85 32 L88 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                <animate attributeName="d" values="M85 32 L88 42;M85 32 L82 42;M85 32 L88 42" dur="0.25s" repeatCount="indefinite" />
+              </path>
+              {/* Front leg 2 */}
+              <path d="M75 32 L72 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                <animate attributeName="d" values="M75 32 L72 42;M75 32 L78 42;M75 32 L72 42" dur="0.25s" repeatCount="indefinite" begin="0.125s" />
+              </path>
+              {/* Back leg 1 */}
+              <path d="M30 32 L25 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                <animate attributeName="d" values="M30 32 L25 42;M30 32 L35 42;M30 32 L25 42" dur="0.25s" repeatCount="indefinite" />
+              </path>
+              {/* Back leg 2 */}
+              <path d="M40 32 L45 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                <animate attributeName="d" values="M40 32 L45 42;M40 32 L38 42;M40 32 L45 42" dur="0.25s" repeatCount="indefinite" begin="0.125s" />
+              </path>
             </g>
             
             {/* Tail */}
-            <path d="M8 12 Q0 10 3 15" stroke="url(#jagGold)" strokeWidth="2" fill="none" strokeLinecap="round" />
+            <path d="M22 20 Q5 15 8 28" stroke="url(#jagRunGold)" strokeWidth="4" fill="none" strokeLinecap="round">
+              <animate attributeName="d" values="M22 20 Q5 15 8 28;M22 20 Q5 25 8 18;M22 20 Q5 15 8 28" dur="0.4s" repeatCount="indefinite" />
+            </path>
           </g>
           
-          {/* Running animation */}
+          {/* Running animation - move across screen */}
           <animateTransform
             attributeName="transform"
             type="translate"
-            from="-50 0"
+            from="-150 0"
             to="100 0"
-            dur="6s"
+            dur="8s"
             repeatCount="indefinite"
           />
         </svg>
