@@ -6,40 +6,46 @@ export default function Footer() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
-      {/* Running Jaguar Animation */}
-      <div className="absolute bottom-2 left-0 right-0 overflow-hidden pointer-events-none" style={{ height: '40px' }}>
-        <motion.svg
-          viewBox="0 0 200 50"
-          className="w-full h-full"
-          preserveAspectRatio="none"
-        >
+      {/* Running Jaguar Animation - Simple CSS animation */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none" style={{ height: '30px' }}>
+        <svg viewBox="0 0 100 20" className="w-full h-full" preserveAspectRatio="none">
           <defs>
-            <linearGradient id="jaguarGold2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="jagGold" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#d4a517" />
               <stop offset="100%" stopColor="#b8860b" />
             </linearGradient>
           </defs>
           
-          {/* Simple running jaguar silhouette */}
-          <motion.g
-            animate={{ x: ['-100px', '100vw'] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          >
-            {/* Body */}
-            <ellipse cx="30" cy="25" rx="20" ry="10" fill="url(#jaguarGold2)" />
-            {/* Head */}
-            <ellipse cx="50" cy="20" rx="8" ry="6" fill="url(#jaguarGold2)" />
-            {/* Legs - simplified */}
-            <line x1="25" y1="35" x2="20" y2="45" stroke="url(#jaguarGold2)" strokeWidth="4" strokeLinecap="round">
-              <animate attributeName="y2" values="45;40;45" dur="0.3s" repeatCount="indefinite" />
-            </line>
-            <line x1="35" y1="35" x2="40" y2="45" stroke="url(#jaguarGold2)" strokeWidth="4" strokeLinecap="round">
-              <animate attributeName="y2" values="45;40;45" dur="0.3s" repeatCount="indefinite" begin="0.15s" />
-            </line>
+          {/* Simple jaguar shape */}
+          <g>
+            <ellipse cx="20" cy="12" rx="12" ry="6" fill="url(#jagGold)" />
+            <ellipse cx="32" cy="10" rx="5" ry="4" fill="url(#jagGold)" />
+            <ellipse cx="8" cy="12" rx="4" ry="3" fill="url(#jagGold)" />
+            
+            {/* Animated legs */}
+            <g>
+              <line x1="15" y1="18" x2="12" y2="22" stroke="url(#jagGold)" strokeWidth="2" strokeLinecap="round">
+                <animate attributeName="y2" values="22;20;22" dur="0.2s" repeatCount="indefinite" />
+              </line>
+              <line x1="22" y1="18" x2="25" y2="22" stroke="url(#jagGold)" strokeWidth="2" strokeLinecap="round">
+                <animate attributeName="y2" values="22;20;22" dur="0.2s" repeatCount="indefinite" begin="0.1s" />
+              </line>
+            </g>
+            
             {/* Tail */}
-            <path d="M10 25 Q0 20 5 30" stroke="url(#jaguarGold2)" strokeWidth="3" fill="none" strokeLinecap="round" />
-          </motion.g>
-        </motion.svg>
+            <path d="M8 12 Q0 10 3 15" stroke="url(#jagGold)" strokeWidth="2" fill="none" strokeLinecap="round" />
+          </g>
+          
+          {/* Running animation */}
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            from="-50 0"
+            to="100 0"
+            dur="6s"
+            repeatCount="indefinite"
+          />
+        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
