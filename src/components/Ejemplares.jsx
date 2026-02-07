@@ -1,10 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 
 export default function Ejemplares() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const [selectedImage, setSelectedImage] = useState(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -20,7 +21,8 @@ export default function Ejemplares() {
       region: "Selvas de América Central",
       caracteristica: "Melanismo - exceso de pigmentación negra",
       descripcion: "Aproximadamente el 6% de los jaguares presentan melanismo, siendo más comunes en las selvas densas donde esta coloración ofrece ventajas de camuflaje.",
-      image: "/images/jaguar-negro.svg"
+      image: "/images/jaguar-negro.svg",
+      photoUrl: "https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       nombre: "Jaguar de Pantanal",
@@ -28,7 +30,8 @@ export default function Ejemplares() {
       region: "Pantanal, Brasil",
       caracteristica: "La población más densa del mundo",
       descripcion: "El Pantanal alberga la mayor concentración de jaguares del planeta, con aproximadamente 1,000 individuos en un ecosistema único de humedales.",
-      image: "/images/jaguar-pantanal.svg"
+      image: "/images/jaguar-pantanal.svg",
+      photoUrl: "https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       nombre: "Jaguar del Amazonas",
@@ -36,7 +39,8 @@ export default function Ejemplares() {
       region: "Amazonía",
       caracteristica: "El felino más grande de América",
       descripcion: "En la selva amazónica, los jaguares pueden alcanzar hasta 150 kg, siendo los depredadores apex más poderosos del ecosistema.",
-      image: "/images/jaguar-amazonas.svg"
+      image: "/images/jaguar-amazonas.svg",
+      photoUrl: "https://images.pexels.com/photos/748837/pexels-photo-748837.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       nombre: "Jaguar del Chocó",
@@ -44,12 +48,88 @@ export default function Ejemplares() {
       region: "Chocó biogeográfico",
       caracteristica: "Población en peligro crítico",
       descripcion: "La población del Pacífico colombiano y ecuatoriano está amenazada por la pérdida de hábitat y la fragmentación del territorio.",
-      image: "/images/jaguar-choco.svg"
+      image: "/images/jaguar-choco.svg",
+      photoUrl: "https://images.pexels.com/photos/69372/pexels-photo-69372.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ];
 
+  const openImageModal = (ejemplar) => {
+    setSelectedImage(ejemplar);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'auto';
+  };
+
   return (
     <section id="ejemplares" ref={containerRef} className="py-20 relative overflow-hidden">
+      {/* Image Modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          onClick={closeImageModal}
+        >
+          {/* Backdrop blur */}
+          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
+          
+          {/* Close button */}
+          <motion.button
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="absolute top-4 right-4 z-50 p-2 text-white hover:text-[#d4a517] transition-colors"
+            onClick={closeImageModal}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </motion.button>
+
+          {/* Full image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+            className="relative max-w-4xl max-h-[85vh] mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedImage.photoUrl}
+              alt={selectedImage.nombre}
+              className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
+            />
+            
+            {/* Image info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mt-4 text-center"
+            >
+              <span className="text-sm tracking-widest uppercase text-[#d4a517]">
+                {selectedImage.region}
+              </span>
+              <h3 className="text-2xl font-bold text-white mt-2">{selectedImage.nombre}</h3>
+              <p className="text-[#d4a517] italic mt-1">{selectedImage.nombreCientifico}</p>
+              <p className="text-gray-300 mt-2 max-w-lg mx-auto">{selectedImage.caracteristica}</p>
+            </motion.div>
+          </motion.div>
+
+          {/* Gold border glow */}
+          <div className="absolute inset-0 rounded-lg pointer-events-none"
+            style={{ 
+              boxShadow: '0 0 50px rgba(212, 165, 23, 0.3), inset 0 0 50px rgba(212, 165, 23, 0.1)' 
+            }}
+          />
+        </motion.div>
+      )}
+
       {/* Background - Pantera Dorada */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -156,15 +236,21 @@ export default function Ejemplares() {
                     </motion.h3>
                     <p className="text-[#d4a517] text-sm italic mt-1">{ejemplar.nombreCientifico}</p>
                   </div>
-                  <motion.div
-                    className="w-10 h-10 rounded-full bg-[#d4a517] flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity"
+                  <motion.button
+                    className="w-10 h-10 rounded-full bg-[#d4a517] flex items-center justify-center opacity-80 hover:opacity-100 transition-all cursor-pointer hover:scale-110"
                     whileHover={{ rotate: 180 }}
-                    transition={{ duration: 0.5 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openImageModal(ejemplar);
+                    }}
+                    title="Ver imagen del jaguar"
                   >
-                    <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                  </motion.div>
+                  </motion.button>
                 </div>
 
                 {/* Region */}

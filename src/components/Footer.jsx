@@ -7,73 +7,82 @@ export default function Footer() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
       {/* Running Jaguar Animation */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none" style={{ height: '50px' }}>
-        <svg viewBox="0 0 120 40" className="w-full h-full" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="jagRunGold" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#d4a517" />
-              <stop offset="100%" stopColor="#b8860b" />
-            </linearGradient>
-          </defs>
-          
-          {/* Jaguar silhouette - running profile */}
-          <g>
-            {/* Body */}
-            <ellipse cx="50" cy="22" rx="28" ry="12" fill="url(#jagRunGold)" />
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none" style={{ height: '25px' }}>
+        <div 
+          className="absolute" 
+          style={{ 
+            width: '80px', 
+            height: '100%',
+            animation: 'runAcross 10s linear infinite'
+          }}
+        >
+          <svg viewBox="0 0 120 40" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="jagRunGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#d4a517" />
+                <stop offset="100%" stopColor="#b8860b" />
+              </linearGradient>
+            </defs>
             
-            {/* Head - jaguar profile */}
-            <ellipse cx="85" cy="15" rx="12" ry="9" fill="url(#jagRunGold)" />
-            
-            {/* Snout */}
-            <ellipse cx="97" cy="17" rx="8" ry="5" fill="url(#jagRunGold)" />
-            
-            {/* Ear */}
-            <ellipse cx="80" cy="7" rx="4" ry="5" fill="url(#jagRunGold)" />
-            
-            {/* Eye */}
-            <circle cx="92" cy="13" r="1.5" fill="#0a0a0a" />
-            
-            {/* Spots on body */}
-            <circle cx="40" cy="20" r="3" fill="#8b6914" opacity="0.6" />
-            <circle cx="55" cy="25" r="2.5" fill="#8b6914" opacity="0.6" />
-            <circle cx="65" cy="21" r="3" fill="#8b6914" opacity="0.6" />
-            
-            {/* Animated legs */}
+            {/* Jaguar silhouette - running profile */}
             <g>
-              {/* Front leg 1 */}
-              <path d="M85 32 L88 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
-                <animate attributeName="d" values="M85 32 L88 42;M85 32 L82 42;M85 32 L88 42" dur="0.25s" repeatCount="indefinite" />
-              </path>
-              {/* Front leg 2 */}
-              <path d="M75 32 L72 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
-                <animate attributeName="d" values="M75 32 L72 42;M75 32 L78 42;M75 32 L72 42" dur="0.25s" repeatCount="indefinite" begin="0.125s" />
-              </path>
-              {/* Back leg 1 */}
-              <path d="M30 32 L25 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
-                <animate attributeName="d" values="M30 32 L25 42;M30 32 L35 42;M30 32 L25 42" dur="0.25s" repeatCount="indefinite" />
-              </path>
-              {/* Back leg 2 */}
-              <path d="M40 32 L45 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
-                <animate attributeName="d" values="M40 32 L45 42;M40 32 L38 42;M40 32 L45 42" dur="0.25s" repeatCount="indefinite" begin="0.125s" />
+              {/* Body */}
+              <ellipse cx="50" cy="22" rx="28" ry="12" fill="url(#jagRunGold)" />
+              
+              {/* Head - tiger/jaguar profile */}
+              <ellipse cx="82" cy="16" rx="10" ry="8" fill="url(#jagRunGold)" />
+              
+              {/* Snout - short and powerful like a big cat */}
+              <ellipse cx="94" cy="18" rx="6" ry="4" fill="url(#jagRunGold)" />
+              
+              {/* Nose */}
+              <ellipse cx="99" cy="18" rx="1.5" ry="1" fill="#1a1a1a" />
+              
+              {/* Ear - rounded triangle */}
+              <ellipse cx="77" cy="9" rx="3" ry="4" fill="url(#jagRunGold)" />
+              
+              {/* Eye - fierce */}
+              <ellipse cx="86" cy="14" rx="2" ry="1.5" fill="#0a0a0a" />
+              <circle cx="85.5" cy="14" r="0.5" fill="#fff" />
+              
+              {/* Spots on body */}
+              <circle cx="40" cy="20" r="3" fill="#8b6914" opacity="0.6" />
+              <circle cx="55" cy="25" r="2.5" fill="#8b6914" opacity="0.6" />
+              <circle cx="65" cy="21" r="3" fill="#8b6914" opacity="0.6" />
+              
+              {/* Animated legs */}
+              <g>
+                {/* Front leg 1 */}
+                <path d="M68 32 L71 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                  <animate attributeName="d" values="M68 32 L71 42;M68 32 L65 42;M68 32 L71 42" dur="0.25s" repeatCount="indefinite" />
+                </path>
+                {/* Front leg 2 */}
+                <path d="M58 32 L55 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                  <animate attributeName="d" values="M58 32 L55 42;M58 32 L61 42;M58 32 L55 42" dur="0.25s" repeatCount="indefinite" begin="0.125s" />
+                </path>
+                {/* Back leg 1 */}
+                <path d="M30 32 L25 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                  <animate attributeName="d" values="M30 32 L25 42;M30 32 L35 42;M30 32 L25 42" dur="0.25s" repeatCount="indefinite" />
+                </path>
+                {/* Back leg 2 */}
+                <path d="M40 32 L45 42" stroke="url(#jagRunGold)" strokeWidth="5" strokeLinecap="round">
+                  <animate attributeName="d" values="M40 32 L45 42;M40 32 L38 42;M40 32 L45 42" dur="0.25s" repeatCount="indefinite" begin="0.125s" />
+                </path>
+              </g>
+              
+              {/* Tail */}
+              <path d="M22 20 Q5 15 8 28" stroke="url(#jagRunGold)" strokeWidth="4" fill="none" strokeLinecap="round">
+                <animate attributeName="d" values="M22 20 Q5 15 8 28;M22 20 Q5 25 8 18;M22 20 Q5 15 8 28" dur="0.4s" repeatCount="indefinite" />
               </path>
             </g>
-            
-            {/* Tail */}
-            <path d="M22 20 Q5 15 8 28" stroke="url(#jagRunGold)" strokeWidth="4" fill="none" strokeLinecap="round">
-              <animate attributeName="d" values="M22 20 Q5 15 8 28;M22 20 Q5 25 8 18;M22 20 Q5 15 8 28" dur="0.4s" repeatCount="indefinite" />
-            </path>
-          </g>
-          
-          {/* Running animation - move across screen */}
-          <animateTransform
-            attributeName="transform"
-            type="translate"
-            from="-150 0"
-            to="100 0"
-            dur="8s"
-            repeatCount="indefinite"
-          />
-        </svg>
+          </svg>
+        </div>
+        <style>{`
+          @keyframes runAcross {
+            0% { left: -80px; }
+            100% { left: 100%; }
+          }
+        `}</style>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

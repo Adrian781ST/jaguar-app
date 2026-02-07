@@ -23,7 +23,7 @@ export default function Galeria() {
       description: "El jaguar en su entorno natural"
     },
     {
-      src: "https://images.pexels.com/photos/1619556/pexels-photo-1619556.jpeg?auto=compress&cs=tinysrgb&w=800",
+      src: "https://images.pexels.com/photos/2220336/pexels-photo-2220336.jpeg?auto=compress&cs=tinysrgb&w=800",
       title: "Garras de Oro",
       category: "Detalle",
       description: "Las garras retráctiles que definen al cazador supremo"
