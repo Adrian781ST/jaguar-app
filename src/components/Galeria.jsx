@@ -11,40 +11,94 @@ export default function Galeria() {
 
   const images = [
     {
-      src: "https://images.pexels.com/photos/748837/pexels-photo-748837.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Majestuosidad",
-      category: "Retrato",
-      description: "La mirada penetrante del depredador perfecto"
-    },
-    {
-      src: "https://images.pexels.com/photos/69372/pexels-photo-69372.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Reino Salvaje",
+      src: "/images/1dada3eb-1.png",
+      title: "Jaguar en la Selva",
       category: "Vida Silvestre",
-      description: "El jaguar en su entorno natural"
+      description: "El depredador supreme acechando entre la vegetación tropical"
     },
     {
-      src: "https://images.pexels.com/photos/2220336/pexels-photo-2220336.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Garras de Oro",
-      category: "Detalle",
-      description: "Las garras retráctiles que definen al cazador supremo"
+      src: "/images/1dada3eb-2.png",
+      title: "Retrato Majestuoso",
+      category: "Retrato",
+      description: "La mirada penetrante del rey de la selva americana"
     },
     {
-      src: "https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "El Puma Americano",
-      category: "Primo Salvaje",
-      description: "El felino más grande de Norteamérica"
+      src: "/images/1dada3eb-3.png",
+      title: "Poder y Belleza",
+      category: "Belleza",
+      description: "La elegante silueta del jaguar en su máximo esplendor"
     },
     {
-      src: "https://images.pexels.com/photos/13301383/pexels-photo-13301383.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Poder",
+      src: "/images/1dada3eb-4.png",
+      title: "Guardián de la Selva",
+      category: "Hábitat",
+      description: "El jaguar protegiendo su territorio natural"
+    },
+    {
+      src: "/images/1dada3eb-5.png",
+      title: "Instinto Salvaje",
       category: "Acción",
-      description: "La fuerza de un depredador legendario"
+      description: "Capturando la esencia del cazador perfecto"
     },
     {
-      src: "https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "La Pantera Negra",
-      category: "Variante",
-      description: "La melanía, la variante oscura del jaguar"
+      src: "/images/1dada3eb-6.png",
+      title: "Elegancia Felina",
+      category: "Elegancia",
+      description: "La grace movimiento del gran felino"
+    },
+    {
+      src: "/images/1dada3eb-7.png",
+      title: "Reino Salvaje",
+      category: "Naturaleza",
+      description: "El jaguar en su elemento natural"
+    },
+    {
+      src: "/images/1dada3eb-8.png",
+      title: "Majestad Tropical",
+      category: "Realeza",
+      description: "La corona de la selva amazónica"
+    },
+    {
+      src: "/images/Fondo-Mundial-para-la-naturazlea.jpg",
+      title: "Conservación Mundial",
+      category: "Protección",
+      description: "Esfuerzos globales para proteger al jaguar"
+    },
+    {
+      src: "/images/nicks-jaguar-pantanal-brasil-header-66656.jpg",
+      title: "Jaguar del Pantanal",
+      category: "Hábitat",
+      description: "El rey del Pantanal brasileiro"
+    },
+    {
+      src: "/images/Nicks-pantanal-jaguar-013-500x400.jpg",
+      title: "Cazador del Pantanal",
+      category: "Caza",
+      description: "Instintos de depredador en acción"
+    },
+    {
+      src: "/images/Screenshot_1.png",
+      title: "Belleza Salvaje",
+      category: "Arte",
+      description: "La belleza del jaguar en estado natural"
+    },
+    {
+      src: "/images/Screenshot_2.png",
+      title: "Misterio Selvático",
+      category: "Misterio",
+      description: "El jaguar escondid en la oscuridad de la selva"
+    },
+    {
+      src: "/images/Screenshot_3.png",
+      title: "Majestuosidad Felina",
+      category: "Grandeza",
+      description: "El porte real del gran felino"
+    },
+    {
+      src: "/images/Screenshot_4.png",
+      title: "Entre Sombras",
+      category: "Camuflaje",
+      description: "El jaguar camuflándose entre la vegetación"
     }
   ];
 

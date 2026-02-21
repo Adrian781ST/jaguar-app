@@ -21,8 +21,8 @@ export default function Ejemplares() {
       region: "Selvas de América Central",
       caracteristica: "Melanismo - exceso de pigmentación negra",
       descripcion: "Aproximadamente el 6% de los jaguares presentan melanismo, siendo más comunes en las selvas densas donde esta coloración ofrece ventajas de camuflaje.",
-      image: "/images/jaguar-negro.svg",
-      photoUrl: "https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "/images/negro.png",
+      photoUrl: "/images/negro.png"
     },
     {
       nombre: "Jaguar de Pantanal",
@@ -30,8 +30,8 @@ export default function Ejemplares() {
       region: "Pantanal, Brasil",
       caracteristica: "La población más densa del mundo",
       descripcion: "El Pantanal alberga la mayor concentración de jaguares del planeta, con aproximadamente 1,000 individuos en un ecosistema único de humedales.",
-      image: "/images/jaguar-pantanal.svg",
-      photoUrl: "https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "/images/Pantanal.jpg",
+      photoUrl: "/images/Pantanal.jpg"
     },
     {
       nombre: "Jaguar del Amazonas",
@@ -39,8 +39,8 @@ export default function Ejemplares() {
       region: "Amazonía",
       caracteristica: "El felino más grande de América",
       descripcion: "En la selva amazónica, los jaguares pueden alcanzar hasta 150 kg, siendo los depredadores apex más poderosos del ecosistema.",
-      image: "/images/jaguar-amazonas.svg",
-      photoUrl: "https://images.pexels.com/photos/748837/pexels-photo-748837.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "/images/Amazonas.jpeg",
+      photoUrl: "/images/Amazonas.jpeg"
     },
     {
       nombre: "Jaguar del Chocó",
@@ -48,8 +48,8 @@ export default function Ejemplares() {
       region: "Chocó biogeográfico",
       caracteristica: "Población en peligro crítico",
       descripcion: "La población del Pacífico colombiano y ecuatoriano está amenazada por la pérdida de hábitat y la fragmentación del territorio.",
-      image: "/images/jaguar-choco.svg",
-      photoUrl: "https://images.pexels.com/photos/69372/pexels-photo-69372.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "/images/choco.jpg",
+      photoUrl: "/images/choco.jpg"
     }
   ];
 
@@ -209,7 +209,8 @@ export default function Ejemplares() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.8 + index * 0.2, duration: 0.8 }}
               whileHover={{ y: -10 }}
-              className="group relative overflow-hidden rounded-2xl h-96"
+              className="group relative overflow-hidden rounded-2xl h-96 cursor-pointer"
+              onClick={() => openImageModal(ejemplar)}
             >
               {/* Background Image with blur */}
               <div 
