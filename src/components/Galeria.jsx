@@ -40,12 +40,7 @@ export default function Galeria() {
       category: "Acción",
       description: "Capturando la esencia del cazador perfecto"
     },
-    {
-      src: "/images/1dada3eb-6.png",
-      title: "Elegancia Felina",
-      category: "Elegancia",
-      description: "La grace movimiento del gran felino"
-    },
+
     {
       src: "/images/1dada3eb-7.png",
       title: "Reino Salvaje",

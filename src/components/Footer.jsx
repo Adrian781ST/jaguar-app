@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 text-center">
             <motion.h2
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ export default function Footer() {
             >
               JAGUAR 
             </motion.h2>
-            <p className="text-gray-400 leading-relaxed max-w-md">
+            <p className="text-gray-400 leading-relaxed max-w-md mx-auto">
               El Panthera onca, símbolo de poder y misterio, necesita nuestra protección. 
               Cada jaguar salvado es un ecosistema completo preservado.
             </p>
